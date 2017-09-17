@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lists</title>
+	    <link rel="stylesheet" href="/static/style.css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <br><br>
+        <table border="1" width="100%" align="center">
+            <tr>
+                {% for name in columns %}
+                    <th>{{name}}</th>
+                {% endfor %}
+            </tr>
+        {% for row in data %}
+            <tr>
+                {% for db_column in db_columns %}
+                    <td>{{ row[db_column] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
